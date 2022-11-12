@@ -1,0 +1,136 @@
+Git으로 작업을 할때 아래와 같은 작업방식이 필요해요
+
+누가 이 작업 할 것인지 정한다. → Issue 할당
+각자 맡은 것을 작업한다. → Branch
+각자 작업을 프로젝트에 합칠 수 있게 공유한다. → Merge
+작업한 내용을 리뷰하고 최종적으로 프로젝트에 반영한다. → PR 후 merge
+
+
+Issue 
+
+- 프로젝트내에서 특정 작업을 할당(assign) 하거나 작업에 대하여 토의 같은 기능을 할수 있다.
+
+- commit message 에 issue 번호(#1)를 붙이면 해당 issue에 자동으로 등록된다. 
+
+
+
+
+branch
+
+
+1. 실제 작업은 issue 먼저 만들고 시작
+
+2. branch 생성
+
+3. branch 생성할때 이름짓는 방법은 회사마다 팀마다 다를수 있으나 약간 '폴더이름/issue번호_파일명' 이런식으로 짓는 경향이 있음
+
+4. 파일 수정
+
+5. commit message에 issue번호 붙이고 commit (commit 전에 수정할 branch에 checkout 되어 있는지 확인)
+
+
+
+branch 삭제
+
+- branch를 삭제하기 위해서는 삭제하지 않는 다른 branch로 checkout 해야한다.
+
+
+
+merge
+
+- merge가 머지? 개발자들이 좋아하는 개그라고 한다. 개발자가 되려면 이런 개그를 좋아해야 하나보다. 고민 좀 해봐야 할거 같다
+
+- 하나의 브랜치의 작업 내역을 다른 브랜치에 합치는 것
+
+- 추가 참고자료: https://ujuc.github.io/2015/12/16/git-flow-github-flow-gitlab-flow/
+
+Git flow, GitHub flow, GitLab flow
+
+Git flow, GitHub flow, GitLab flow 에대해서 좀 알아보자. 머리아프다.
+
+ujuc.github.io
+- 참고할 만한 기술 블로그: https://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html
+
+우린 Git-flow를 사용하고 있어요 - 우아한형제들 기술 블로그
+
+안녕하세요. 우아한형제들 배민프론트개발팀에서 안드로이드 앱 개발을 하고 있는 나동호입니다.오늘은 저희 안드로이드 파트에서 사용하고 있는 Git 브랜치 전략을 소개하려고 합니다. ‘배달
+
+woowabros.github.io
+
+
+merge 작업순서
+
+1. issue 발행
+
+2. branch 생성- 해당 commit에 우클릭하여 생성하면 해당 커밋에서 브랜치 생성
+
+3. 파일 수정 후 커밋
+
+4. merge를 하려는? 기준이 되는? main branch에 checkout
+
+5. merge 실행
+
+ 6. 대상이 되는 commit을 선택, 3가지 option 선택, 확인
+
+
+
+
+merge conflict
+
+그러나 컴퓨터 프로그래밍을 배울 때 처음부터 잘하지는 못한다. 능숙한 프로그래머가 되려면 능숙하게 '버그'를 찾아내고 수정하는 법을 익혀야 한다. 프로그래밍을 하면서 던져야할 질문은 이것이 맞느냐 틀리느냐가 아니라 버그를 수정할 수 있느냐 없느냐다. 이런 식의 지적 결과물을 바라보는 방식이 지식과 지식 습득을 대하는 좀 더 큰 문화에까지 보편화된다면 우리 모두 '틀리는 것'을 덜 두려워하게 될 것이다.
+- 마인드스톰 mindstorm (시모어 패퍼트 지음.인사이트.이현경 옮김)
+- 하나의 파일을 여러 브랜치에서 수정하고 하나의 branch에 merge 할 때 merge conflict(병합 충돌) 가 발생합니다. 양 쪽에서 내용이 수정되었는데 어떤 내용을 반영해야할지 git에서 확인하는 메세지를 준다.
+
+
+원격 repo와 branch
+
+- pull 과 push 는 특정 branch(tracking branch)에 있는 commit을 여기와 연결되어있는 branch에 가져오는 것.
+- 원격 repo와 local repo는 branch 단위로 연결되어 있다는 개념을 아는 것이 중요
+
+
+- 원격 repo에 push를 하는 경우
+
+
+- local repo에 branch를 만들고 원격 repo에 push 하기
+
+
+
+
+개발자 추천 도서
+
+지금 상황과 상관없이 여러분은 언제나 더 나아질 수 있다. 더 나아지는 일은 언제나 스스로부터 시작할 수 있다. 더 나아지는 일은 언제나 오늘부터 시작할 수 있다.
+No matter the circumstances you can always improve. You can always start improving with yourself. You can always start improving today.
+
+- 익스트림 프로그래밍(2판).켄트 벡, 신시아 안드레스 지음. 김창준,정지호 옮김.인사이트
+스스로 난이도 조절하기
+
+내용이 쉽다 → 난이도 높이기 → 추가자료 읽어 보고 생각/실제로 해보기 → 나만의 실험 고안하기 → 에러를 일부러 내보고 해결하는 거 구글링해보기 → 그 과정에서 내가 깨달은 것 TIL 에 적어보기
+아 적절해요 좋은데요? → [👩‍🍳 배웠으면 써먹자] 다양하게 시도해보기 → 그 과정에서 내가 깨달은 것 TIL 에 적어보기
+너무 어렵다, 집에 있어도 집에 가고 싶다! 🏠 → 난이도 낮추기 → 영상 보면서 천천히 시간 들여서 따라해보기 → 그 다음에 다시 [👩‍🍳 배웠으면 써먹자] 시도해보기 → 내가 어려워했던 내용이 무엇인지 정리해보기 → 그 과정에서 내가 깨달은 것 TIL 에 적어보기
+►초대받은 organization repo 로 push가 안 될 경우 확인해봐야 할것.
+
+✓ owner가 member를 초대할 때 owner 권한으로 초대했는지 확인할것. manager는 push가 되지 않는다.
+
+
+
+개념정리
+
+협업하기 위한 단계는 무엇이 있을까?
+- 작업 할당(issue) → branch 생성 → 작업 → commit → merge → push
+issue
+- 작업을 할당하거나, 의견을 나눌 때 사용하는 기능
+branch
+- 내가 각자 맡은 작업을 할 가상의 공간
+merge
+- branch 에서 작업 후에 main branch로 파일을 합치는 것.
+merge conflict
+- 서로 다른 branch에서 같은 파일을 작업했을 때 서로 다른 내용이 있으면 git에서 알려주는 것.
+원격 repo 의 origin
+- 원격 repo에 있는 파일 원본이 저장되어 있는 곳.
+실무에서는
+
+- 사용자에게 보여주는 release branch, 개발자들이 사용하는 develop branch가 있다.
+
+- develop branch에서 이것 저것 개발을 한 후에 여러 test를 거친 후 마지막으로 release branch로 옮긴다.
+
+- 사용자가 버그를 많이 경험하는 것은 UX에 좋지 않으므로 이런 식으로 사용한다.
